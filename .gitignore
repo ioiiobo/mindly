@@ -1,4 +1,4 @@
-# Mots de passe et réglages sensibles
+# Secrets : jamais dans le dépôt
 wp-config.php
 .env
 
