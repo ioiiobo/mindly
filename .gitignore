@@ -1,0 +1,12 @@
+# Mots de passe et réglages sensibles
+wp-config.php
+.env
+
+# Fichiers inutiles
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+
+# Fichiers téléversés par WordPress
+wp-content/uploads/
