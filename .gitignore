@@ -1,0 +1,12 @@
+# Secrets : jamais dans le dépôt
+wp-config.php
+.env
+
+# Fichiers inutiles
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+
+# Fichiers téléversés par WordPress
+wp-content/uploads/
