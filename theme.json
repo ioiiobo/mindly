@@ -1,4 +1,126 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "version": 3
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "principale", "name": "Principale", "color": "#4B005F" },
+        { "slug": "texte", "name": "Texte", "color": "#32003F" },
+        { "slug": "accent", "name": "Accent", "color": "#C901FF" },
+        { "slug": "accent-clair", "name": "Accent clair", "color": "#CDFC84" },
+        { "slug": "accent-sombre", "name": "Accent sombre", "color": "#003022" },
+        { "slug": "fond", "name": "Fond", "color": "#FDF9F2" },
+        { "slug": "erreur", "name": "Erreur", "color": "#860E48" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "titres",
+          "name": "Titres, boutons et menu (Anton)",
+          "fontFamily": "Anton, Impact, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Anton",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/anton-400.woff2"]
+            }
+          ]
+        },
+        {
+          "slug": "corps",
+          "name": "Corps de texte (Roboto)",
+          "fontFamily": "Roboto, Arial, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/roboto-400.woff2"]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/roboto-700.woff2"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        { "slug": "petit", "name": "Petit", "size": "0.9375rem" },
+        { "slug": "texte", "name": "Texte", "size": "1.25rem" },
+        { "slug": "titre-2", "name": "Titre 2", "size": "1.5625rem" },
+        { "slug": "titre-1", "name": "Titre 1", "size": "2.1875rem" }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        { "slug": "xs", "name": "XS (12 px)", "size": "0.75rem" },
+        { "slug": "s", "name": "S (24 px)", "size": "1.5rem" },
+        { "slug": "m", "name": "M (70 px)", "size": "4.375rem" },
+        { "slug": "l", "name": "L (100 px)", "size": "6.25rem" },
+        { "slug": "xl", "name": "XL (160 px)", "size": "10rem" }
+      ]
+    },
+    "custom": {
+      "arrondi": "30px",
+      "arrondi-bouton": "100px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--fond)",
+      "text": "var(--wp--preset--color--texte)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--corps)",
+      "fontSize": "var(--wp--preset--font-size--texte)"
+    },
+    "elements": {
+      "heading": {
+        "color": { "text": "var(--wp--preset--color--principale)" },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--titres)",
+          "fontWeight": "400"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--titre-1)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--titre-2)"
+        }
+      },
+      "link": {
+        "color": { "text": "var(--wp--preset--color--principale)" }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--principale)",
+          "text": "var(--wp--preset--color--accent-clair)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--titres)",
+          "fontSize": "var(--wp--preset--font-size--petit)",
+          "textTransform": "uppercase"
+        },
+        "border": { "radius": "var(--wp--custom--arrondi-bouton)" }
+      }
+    },
+    "blocks": {
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--titres)"
+        }
+      }
+    }
+  }
 }
