@@ -4,42 +4,72 @@
   "settings": {
     "color": {
       "palette": [
-        { "slug": "principale", "name": "Principale", "color": "#2F6B4F" },
-        { "slug": "secondaire", "name": "Secondaire", "color": "#E9F2EC" },
-        { "slug": "accent", "name": "Accent", "color": "#F2A65A" },
-        { "slug": "fond", "name": "Fond", "color":"FDF9F2" },
-        { "slug": "fond-alt", "name": "Fond alternatif", "color": "#F3F3F1" },
-        { "slug": "texte", "name": "Texte", "color": "#32003F" }
-        { "slug": "error", "name": "error", "color": "#860E48" }
+        { "slug": "principale", "name": "Principale", "color": "#4B005F" },
+        { "slug": "texte", "name": "Texte", "color": "#32003F" },
+        { "slug": "accent", "name": "Accent", "color": "#C901FF" },
+        { "slug": "accent-clair", "name": "Accent clair", "color": "#CDFC84" },
+        { "slug": "accent-sombre", "name": "Accent sombre", "color": "#003022" },
+        { "slug": "fond", "name": "Fond", "color": "#FDF9F2" },
+        { "slug": "erreur", "name": "Erreur", "color": "#860E48" }
       ]
     },
     "typography": {
       "fontFamilies": [
         {
           "slug": "titres",
-          "name": "Titres",
-          "fontFamily": "Anton"
+          "name": "Titres, boutons et menu (Anton)",
+          "fontFamily": "Anton, Impact, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Anton",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/anton-400.woff2"]
+            }
+          ]
         },
         {
           "slug": "corps",
-          "name": "Corps de texte",
-          "fontFamily": "Roboto"
+          "name": "Corps de texte (Roboto)",
+          "fontFamily": "Roboto, Arial, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/roboto-400.woff2"]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/roboto-700.woff2"]
+            }
+          ]
         }
       ],
       "fontSizes": [
-        { "slug": "petit", "name": "Petit", "size": "0.875rem" },
-        { "slug": "normal", "name": "Normal", "size": "1rem" },
-        { "slug": "grand", "name": "Grand", "size": "1.5rem" },
-        { "slug": "tres-grand", "name": "Très grand", "size": "2.5rem" }
+        { "slug": "petit", "name": "Petit", "size": "0.9375rem" },
+        { "slug": "texte", "name": "Texte", "size": "1.25rem" },
+        { "slug": "titre-2", "name": "Titre 2", "size": "1.5625rem" },
+        { "slug": "titre-1", "name": "Titre 1", "size": "2.1875rem" }
       ]
     },
     "spacing": {
       "spacingSizes": [
-        { "slug": "xs", "name": "XS", "size": "0.5rem" },
-        { "slug": "s", "name": "S", "size": "1rem" },
-        { "slug": "m", "name": "M", "size": "2rem" },
-        { "slug": "l", "name": "L", "size": "4rem" }
+        { "slug": "xs", "name": "XS (12 px)", "size": "0.75rem" },
+        { "slug": "s", "name": "S (24 px)", "size": "1.5rem" },
+        { "slug": "m", "name": "M (70 px)", "size": "4.375rem" },
+        { "slug": "l", "name": "L (100 px)", "size": "6.25rem" },
+        { "slug": "xl", "name": "XL (160 px)", "size": "10rem" }
       ]
+    },
+    "custom": {
+      "arrondi": "30px",
+      "arrondi-bouton": "100px"
     }
   },
   "styles": {
@@ -49,16 +79,47 @@
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--corps)",
-      "fontSize": "var(--wp--preset--font-size--normal)"
+      "fontSize": "var(--wp--preset--font-size--texte)"
     },
     "elements": {
       "heading": {
+        "color": { "text": "var(--wp--preset--color--principale)" },
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--titres)"
+          "fontFamily": "var(--wp--preset--font-family--titres)",
+          "fontWeight": "400"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--titre-1)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--titre-2)"
         }
       },
       "link": {
         "color": { "text": "var(--wp--preset--color--principale)" }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--principale)",
+          "text": "var(--wp--preset--color--accent-clair)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--titres)",
+          "fontSize": "var(--wp--preset--font-size--petit)",
+          "textTransform": "uppercase"
+        },
+        "border": { "radius": "var(--wp--custom--arrondi-bouton)" }
+      }
+    },
+    "blocks": {
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--titres)"
+        }
       }
     }
   }
