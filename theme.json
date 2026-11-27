@@ -69,7 +69,11 @@
     },
     "custom": {
       "arrondi": "30px",
-      "arrondi-bouton": "100px"
+      "arrondi-bouton": "100px",
+      "transition": "0.2s ease-in-out",
+      "contour": "3px",
+      "decalage-survol": "-4px"
+}
     }
   },
   "styles": {
