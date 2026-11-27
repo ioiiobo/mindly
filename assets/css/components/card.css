@@ -1,0 +1,80 @@
+/* Composant carte éco : toutes les valeurs viennent de theme.json */
+.eco-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp--preset--spacing--xs);
+  background-color: var(--wp--preset--color--fond);
+  color: var(--wp--preset--color--texte);
+  border-radius: var(--wp--custom--arrondi);
+  transition:
+    transform var(--wp--custom--transition),
+    outline-color var(--wp--custom--transition);
+  outline: var(--wp--custom--contour) solid transparent;
+  outline-offset: var(--wp--preset--spacing--xs);
+}
+
+.eco-card img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--wp--custom--arrondi);
+}
+
+.eco-card :is(h2, h3) {
+  margin: 0;
+  font-family: var(--wp--preset--font-family--titres);
+  font-size: var(--wp--preset--font-size--titre-2);
+  font-weight: 400;
+  color: var(--wp--preset--color--principale);
+}
+
+.eco-card p {
+  margin: 0;
+  font-size: var(--wp--preset--font-size--petit);
+  color: var(--wp--preset--color--texte);
+}
+
+/* Badge de statut (ex. « En cours ») */
+.eco-card__badge {
+  display: inline-block;
+  padding: var(--wp--preset--spacing--xs) var(--wp--preset--spacing--s);
+  background-color: var(--wp--preset--color--accent-clair);
+  color: var(--wp--preset--color--texte);
+  font-size: var(--wp--preset--font-size--petit);
+  border-radius: 0 var(--wp--custom--arrondi) var(--wp--custom--arrondi) 0;
+}
+
+/* Lien du titre étendu à toute la carte : toute la carte est cliquable */
+.eco-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--wp--custom--arrondi);
+}
+
+/* Effet au survol */
+.eco-card:hover {
+  transform: translateY(var(--wp--custom--decalage-survol));
+  outline-color: var(--wp--preset--color--accent);
+}
+
+/* Focus clavier visible, sur la carte quand son lien est atteint à la touche Tab */
+.eco-card:focus-visible,
+.eco-card:has(a:focus-visible) {
+  outline-color: var(--wp--preset--color--principale);
+}
+
+.eco-card a:focus-visible {
+  outline: none;
+}
+
+/* Respect des préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  .eco-card {
+    transition: none;
+  }
+  .eco-card:hover {
+    transform: none;
+  }
+}
